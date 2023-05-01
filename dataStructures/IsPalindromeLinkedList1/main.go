@@ -15,13 +15,18 @@ func (head *Node) isPalindrome() bool {
 	// find the middle of the linked list
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
+		fmt.Println("fast:", fast.Value)
+		fmt.Println("slow:", slow.Value)
 		slow = slow.Next
 		fast = fast.Next.Next
+		fmt.Println("After fast:", fast.Value)
+		fmt.Println("After slow:", slow.Value)
 	}
 
 	// reverse the second half of the linked list
 	var prev *Node
 	current := slow
+	fmt.Println("Current", current.Value)
 	for current != nil {
 		next := current.Next
 		current.Next = prev
@@ -29,6 +34,7 @@ func (head *Node) isPalindrome() bool {
 		current = next
 	}
 
+	fmt.Println("Prev", prev)
 	// compare the first half with the reversed second half
 	for prev != nil && head != nil {
 		if prev.Value != head.Value {
