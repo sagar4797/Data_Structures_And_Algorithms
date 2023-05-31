@@ -9,23 +9,6 @@ type Node struct {
 	Next  *Node
 }
 
-func main() {
-	head := &Node{Value: 1, Next: nil}
-	node1 := &Node{Value: 2, Next: nil}
-	node2 := &Node{Value: 3, Next: nil}
-	node3 := &Node{Value: 4, Next: nil}
-	node4 := &Node{Value: 1, Next: nil}
-
-	head.Next = node1
-	node1.Next = node2
-	node2.Next = node3
-	node3.Next = node4
-
-	result := head.IsPalindrom()
-	fmt.Println("Result:", result)
-
-}
-
 func (head *Node) IsPalindrom() bool {
 	if head == nil {
 		return true
@@ -58,6 +41,23 @@ func (head *Node) IsPalindrom() bool {
 		head = head.Next
 	}
 	return true
+}
+
+func main() {
+	head := &Node{Value: 1, Next: nil}
+	node1 := &Node{Value: 2, Next: nil}
+	node2 := &Node{Value: 3, Next: nil}
+	node3 := &Node{Value: 4, Next: nil}
+	node4 := &Node{Value: 1, Next: nil}
+
+	head.Next = node1
+	node1.Next = node2
+	node2.Next = node3
+	node3.Next = node4
+
+	result := head.IsPalindrom()
+	fmt.Println("Result:", result)
+
 }
 
 // 1 ->2 -> 3 -> 2 -> 1

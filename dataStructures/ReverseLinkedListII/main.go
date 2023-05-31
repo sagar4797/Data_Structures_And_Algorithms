@@ -7,27 +7,6 @@ type Node struct {
 	Next  *Node
 }
 
-func main() {
-	// create a linked list
-	head := &Node{Value: 1, Next: nil}
-	node1 := &Node{Value: 2, Next: nil}
-	node2 := &Node{Value: 3, Next: nil}
-	node3 := &Node{Value: 4, Next: nil}
-	node4 := &Node{Value: 5, Next: nil}
-
-	head.Next = node1
-	node1.Next = node2
-	node2.Next = node3
-	node3.Next = node4
-
-	left := 2
-	right := 4
-	// check if the linked list is a palindrome
-	reversed := reverseBetween(head, left, right)
-	printList(reversed)
-
-}
-
 // Function to print the linked list.
 func printList(head *Node) {
 	current := head
@@ -61,4 +40,25 @@ func reverseBetween(head *Node, left int, right int) *Node {
 	}
 
 	return dummy.Next
+}
+
+func main() {
+	// create a linked list
+	head := &Node{Value: 1, Next: nil}
+	node1 := &Node{Value: 2, Next: nil}
+	node2 := &Node{Value: 3, Next: nil}
+	node3 := &Node{Value: 4, Next: nil}
+	node4 := &Node{Value: 5, Next: nil}
+
+	head.Next = node1
+	node1.Next = node2
+	node2.Next = node3
+	node3.Next = node4
+
+	left := 2
+	right := 4
+	// check if the linked list is a palindrome
+	reversed := reverseBetween(head, left, right)
+	printList(reversed)
+
 }
